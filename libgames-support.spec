@@ -5,12 +5,12 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgames-support
-Version:	0.1
-Release:	2
+Version:	0.2
+Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://download.gnome.org/sources/libgames-support/0.1/%{name}-%{version}.tar.xz
-# Source0-md5:	741a504dd001450473045079d63ada9c
+Source0:	http://download.gnome.org/sources/libgames-support/0.2/%{name}-%{version}.tar.xz
+# Source0-md5:	e42f392168c0c90e7c9a196eb7699a2a
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.40.0
@@ -83,6 +83,7 @@ API języka Vala do bibliotek libgames-support.
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{?with_static_libs:--enable-static}
 %{__make}
 
@@ -106,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_libdir}/libgames-support.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgames-support.so.0
+%attr(755,root,root) %ghost %{_libdir}/libgames-support.so.1
 
 %files devel
 %defattr(644,root,root,755)

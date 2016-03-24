@@ -5,23 +5,23 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgames-support
-Version:	0.2
+Version:	1.0
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://download.gnome.org/sources/libgames-support/0.2/%{name}-%{version}.tar.xz
-# Source0-md5:	e42f392168c0c90e7c9a196eb7699a2a
+Source0:	http://download.gnome.org/sources/libgames-support/1.0/%{name}-%{version}.tar.xz
+# Source0-md5:	4504b352f4a91cfe152ef791fe939762
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.40.0
-BuildRequires:	gtk+3-devel >= 3.12.0
+BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	intltool >= 0.50.2
 BuildRequires:	libgee-devel >= 0.8
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.24.0
 Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.12.0
+Requires:	gtk+3 >= 3.20.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +41,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgames-support
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.40.0
-Requires:	gtk+3-devel >= 3.12.0
+Requires:	gtk+3-devel >= 3.20.0
 
 %description devel
 Header files for libgames-support library.
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_libdir}/libgames-support.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgames-support.so.1
+%attr(755,root,root) %ghost %{_libdir}/libgames-support.so.2
 
 %files devel
 %defattr(644,root,root,755)

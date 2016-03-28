@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	static_libs	# static library
-#
+
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgames-support
 Version:	1.0
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		X11/Libraries
 Source0:	http://download.gnome.org/sources/libgames-support/1.0/%{name}-%{version}.tar.xz
@@ -66,6 +66,9 @@ Summary:	Vala API for libgames-support library
 Summary(pl.UTF-8):	API języka Vala do bibliotek libgames-support
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description -n vala-libgames-support
 Vala API for libgames-support library.

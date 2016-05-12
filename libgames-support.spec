@@ -5,12 +5,12 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgames-support
-Version:	1.0.1
+Version:	1.0.2
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://download.gnome.org/sources/libgames-support/1.0/%{name}-%{version}.tar.xz
-# Source0-md5:	e60e13eb812f2c7de4acdee4220824b8
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgames-support/1.0/%{name}-%{version}.tar.xz
+# Source0-md5:	ffba5c102eeb9ae3d96294bccb02446e
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	glib2-devel >= 1:2.40.0

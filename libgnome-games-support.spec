@@ -13,6 +13,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.2/%{nam
 # Source0-md5:	faedf9fbea367623314eb70f58017a24
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	libgee-devel >= 0.8

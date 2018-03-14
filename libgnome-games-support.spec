@@ -5,12 +5,12 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
-Version:	1.2.3
+Version:	1.4.0
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	aa450e7cf337452270d358c8905d8f8f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.4/%{name}-%{version}.tar.xz
+# Source0-md5:	3cd6de98aa0e70c6c8b46a62efe5ba4c
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools >= 0.19.8
@@ -19,7 +19,7 @@ BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	libgee-devel >= 0.8
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	pkgconfig
-BuildRequires:	vala >= 2:0.24.0
+BuildRequires:	vala >= 2:0.40.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.20.0
 Provides:	libgames-support = %{version}-%{release}
@@ -117,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_libdir}/libgnome-games-support-1.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgnome-games-support-1.so.2
+%attr(755,root,root) %ghost %{_libdir}/libgnome-games-support-1.so.3
 
 %files devel
 %defattr(644,root,root,755)

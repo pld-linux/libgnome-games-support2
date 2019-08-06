@@ -5,12 +5,13 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
-Version:	1.4.1
+Version:	1.4.3
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	3b3df350a3527ab648bd450193931a42
+# Source0-md5:	a18acdf1a5398507a12fc6f408b5c541
+URL:		https://github.com/GNOME/libgnome-games-support
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools >= 0.19.8
@@ -22,6 +23,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	vala >= 2:0.40.0
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.20.0
+Requires:	libgee >= 0.8
 Provides:	libgames-support = %{version}-%{release}
 Obsoletes:	libgames-support < 1.2.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,6 +46,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.40.0
 Requires:	gtk+3-devel >= 3.20.0
+Requires:	libgee-devel >= 0.8
 Provides:	libgames-support-devel = %{version}-%{release}
 Obsoletes:	libgames-support-devel < 1.2.0-1
 

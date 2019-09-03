@@ -5,12 +5,12 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
-Version:	1.4.3
+Version:	1.4.4
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	a18acdf1a5398507a12fc6f408b5c541
+# Source0-md5:	2bc7594ad4b54f25648964792112bc51
 URL:		https://github.com/GNOME/libgnome-games-support
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11

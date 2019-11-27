@@ -25,6 +25,7 @@ Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.20.0
 Requires:	libgee >= 0.8
 Provides:	libgames-support = %{version}-%{release}
+Obsoletes:	gnome-games < 1:3.8.0
 Obsoletes:	libgames-support < 1.2.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,6 +49,8 @@ Requires:	glib2-devel >= 1:2.40.0
 Requires:	gtk+3-devel >= 3.20.0
 Requires:	libgee-devel >= 0.8
 Provides:	libgames-support-devel = %{version}-%{release}
+Obsoletes:	gnome-games-devel < 1:2.8.0
+Obsoletes:	gnome-games-static < 1:2.8.0
 Obsoletes:	libgames-support-devel < 1.2.0-1
 
 %description devel

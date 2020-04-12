@@ -5,25 +5,27 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
-Version:	1.4.4
+Version:	1.6.1
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.4/%{name}-%{version}.tar.xz
-# Source0-md5:	2bc7594ad4b54f25648964792112bc51
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.6/%{name}-%{version}.tar.xz
+# Source0-md5:	7d7e6385c8981e5a0b8de79f77aa5168
 URL:		https://github.com/GNOME/libgnome-games-support
-BuildRequires:	autoconf >= 2.69
-BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gtk+3-devel >= 3.20.0
-BuildRequires:	libgee-devel >= 0.8
-BuildRequires:	libtool >= 2:2.2
+BuildRequires:	libgee-devel >= 0.14.0
+BuildRequires:	meson >= 0.50.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.40.0
+BuildRequires:	xz
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk+3 >= 3.20.0
-Requires:	libgee >= 0.8
+Requires:	libgee >= 0.14.0
 Provides:	libgames-support = %{version}-%{release}
 Obsoletes:	gnome-games < 1:3.8.0
 Obsoletes:	libgames-support < 1.2.0-1
@@ -47,7 +49,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.40.0
 Requires:	gtk+3-devel >= 3.20.0
-Requires:	libgee-devel >= 0.8
+Requires:	libgee-devel >= 0.14.0
 Provides:	libgames-support-devel = %{version}-%{release}
 Obsoletes:	gnome-games-devel < 1:2.8.0
 Obsoletes:	gnome-games-static < 1:2.8.0
@@ -80,7 +82,7 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	vala-libgames-support = %{version}-%{release}
 Obsoletes:	vala-libgames-support < 1.2.0-1
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
@@ -94,22 +96,29 @@ API języka Vala do bibliotek libgnome-games-support.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	%{?with_static_libs:--enable-static}
-%{__make}
+%if %{with static_libs}
+# --default-library=both doesn't work with vala generated sources
+# https://github.com/mesonbuild/meson/issues/6960
+%meson build-static \
+	--default-library=static
+
+%ninja_build -C build-static
+%endif
+
+%meson build \
+	--default-library=shared
+#	%{!?with_static_libs:--default-library=shared}
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%if %{with static_libs}
+%ninja_install -C build-static
+%endif
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+%ninja_install -C build
 
 %find_lang %{name}
 

@@ -5,12 +5,12 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
-Version:	1.6.1
+Version:	1.8.0
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.6/%{name}-%{version}.tar.xz
-# Source0-md5:	7d7e6385c8981e5a0b8de79f77aa5168
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/libgnome-games-support/1.8/%{name}-%{version}.tar.xz
+# Source0-md5:	f6a9b608e4606eee8c17951af383aaa1
 URL:		https://github.com/GNOME/libgnome-games-support
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.40.0

@@ -82,9 +82,7 @@ Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	vala-libgames-support = %{version}-%{release}
 Obsoletes:	vala-libgames-support < 1.2.0-1
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description -n vala-libgnome-games-support
 Vala API for libgnome-games-support library.

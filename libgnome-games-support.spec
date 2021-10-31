@@ -6,7 +6,7 @@ Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support
 Version:	1.8.2
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		X11/Libraries
 Source0:	https://download.gnome.org/sources/libgnome-games-support/1.8/%{name}-%{version}.tar.xz

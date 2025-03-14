@@ -1,27 +1,27 @@
 Summary:	Support library for GNOME games
 Summary(pl.UTF-8):	Biblioteka wspierająca dla gier GNOME
 Name:		libgnome-games-support2
-Version:	2.0.0
+Version:	2.0.1
 Release:	1
 License:	LGPL v3+
 Group:		X11/Libraries
 Source0:	https://download.gnome.org/sources/libgnome-games-support/2.0/libgnome-games-support-%{version}.tar.xz
-# Source0-md5:	75823f85a5c5ed4f930111e65d2143de
+# Source0-md5:	a613e4693ebeac275e8fee981394cdea
 URL:		https://github.com/GNOME/libgnome-games-support
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.40.0
-BuildRequires:	gtk+3-devel >= 3.20.0
+BuildRequires:	gtk4-devel >= 4.2.0
 BuildRequires:	libgee-devel >= 0.14.0
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.6
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.40.0
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.20.0
+Requires:	gtk4 >= 4.2.0
 Requires:	libgee >= 0.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +42,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libgnome-games-support
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.40.0
-Requires:	gtk+3-devel >= 3.20.0
+Requires:	gtk4-devel >= 4.2.0
 Requires:	libgee-devel >= 0.14.0
 
 %description devel
@@ -71,15 +71,15 @@ API języka Vala do bibliotek libgnome-games-support.
 # --default-library=both doesn't work with vala generated sources
 # https://github.com/mesonbuild/meson/issues/6960
 # We don't need static library currently, so don't bother to make it.
-%meson build \
+%meson \
 	--default-library=shared
 
-%ninja_build -C build
+%meson_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install -C build
 
 %find_lang %{name}
 

@@ -19,6 +19,7 @@ BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.40.0
+BuildRequires:	vala-libgee >= 0.14.0
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.40.0
 Requires:	gtk4 >= 4.2.0
